@@ -7,7 +7,7 @@ from selenium import webdriver
 def browser_setup():
     # Настройки
     options = webdriver.ChromeOptions()
-    options.page_load_strategy = 'eager'
+    # options.page_load_strategy = 'eager'
     browser.config.driver_options = options
     browser.config.browser_name = 'chrome'
     browser.config.base_url = 'https://demoqa.com'
