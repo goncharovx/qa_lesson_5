@@ -1,11 +1,17 @@
 import os
+import time
 
 from selene import have
 from selene.support.shared import browser
-from selene.support.shared.jquery_style import s, ss
+from selene.support.shared.jquery_style import s
 
 
-def test_form_submission_with_s():
+def test_form_submission_with_s_and_banner_removal():
+    # Удаление рекламных баннеров
+    browser.driver.execute_script("$('#fixedban').remove()")
+    browser.driver.execute_script("$('footer').remove()")
+
+
     # Путь к файлу
     current_dir = os.path.dirname(__file__)
     file_path = os.path.join(current_dir, 'resources', 'test_upload.png')

@@ -5,6 +5,10 @@ from selene.support.shared import browser
 
 
 def test_form_submission():
+    # Удаление рекламных баннеров
+    browser.driver.execute_script("$('#fixedban').remove()")
+    browser.driver.execute_script("$('footer').remove()")
+
     # Путь к файлу
     current_dir = os.path.dirname(__file__)
     file_path = os.path.join(current_dir, 'resources', 'test_upload.png')
